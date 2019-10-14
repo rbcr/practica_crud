@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('productos');
 });
+
+Route::get('/productos', 'ProductosController@index');
+Route::get('/productos/agregar', 'ProductosController@agregar');
+Route::post('/productos/add', 'ProductosController@add');
+Route::get('/productos/editar/{id}', 'ProductosController@editar');
+Route::post('/productos/update', 'ProductosController@update');
+Route::post('/productos/drop', 'ProductosController@drop');
